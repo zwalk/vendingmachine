@@ -50,9 +50,11 @@ public class VendingMachineCLI {
 		while(fileCheck) {
 			salesReportWriter.writeSalesReport();
 			this.userSlotChoices = new ArrayList<String>();
+			mainMenu.displayTitleBranding();
 			String choice = (String)mainMenu.getChoiceFromOptions();
 			
 			if(choice.equals(mainMenu.getOptionDisplayItems())) {
+				mainMenu.displayVendingMachine();
 				mainMenu.displayVendingItems(inventory.getInventoryMap()); 
 			} else if(choice.equals(mainMenu.getOptionPurchase())) {
 				while (true) {
